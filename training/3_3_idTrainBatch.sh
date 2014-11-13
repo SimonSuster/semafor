@@ -3,7 +3,7 @@
 set -e # fail fast
 
 echo
-echo "step 4: training the frame identification model."
+echo "step 3.3: training the frame identification model."
 echo
 
 source "$(dirname ${0})/config.sh"

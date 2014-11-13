@@ -2,7 +2,7 @@
 
 set -e # fail fast
 
-# step 5: convert the alphabet file.
+# step 3.4: convert the alphabet file.
 
 source "$(dirname ${0})/config.sh"
 

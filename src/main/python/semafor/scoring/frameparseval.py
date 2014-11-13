@@ -316,11 +316,17 @@ def get_non_targets(gold_sentence):
 
 
 def _arg_points(frame_name, arg_name, non_core_score=OTHER_CORENESS_POINTS):
-    return CORE_POINTS if CORE_STATUS[frame_name][arg_name]=='Core' else non_core_score
+    try:
+        return CORE_POINTS if CORE_STATUS[frame_name][arg_name]=='Core' else non_core_score
+    except KeyError:
+        print("Key Error****************************************************************************\n\n\n\n")
+        return non_core_score
 
 def score_sentence(gold, predicted, errors, verbose=False):
     #TODO
-    #assert len(gold['tokens']) == len(predicted['tokens']) and ' '.join(gold['tokens']) == ' '.join(predicted['tokens'])
+    assert len(gold['tokens']) == len(predicted['tokens'])
+
+    assert ' '.join(gold['tokens']) == ' '.join(predicted['tokens'])
     sentence_stats = PRCounter()
     num_tokens = len(gold['tokens'])
     pred_target_coverage, pred_frames, pred_args = get_predictions_by_span(predicted['frames'])
@@ -479,7 +485,8 @@ if __name__=='__main__':
         for sentNum,(gold_line,pred_line) in enumerate(zip(gold_file, pred_file)):
             sent_scores = score_sentence(json.loads(gold_line), json.loads(pred_line), errors, verbose=(sentNum==366))
             if sentNum==366:
-                assert False,errors
+                continue
+                #assert False,errors
             # sentence statistics format matches that of fnSemScore_modified.pl
             if 'Total frames and labeled arguments' in sent_scores._df.index:
                 tot = sent_scores._df['Total frames and labeled arguments':'Total frames and labeled arguments']

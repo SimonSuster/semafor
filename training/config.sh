@@ -8,11 +8,12 @@ source "$(dirname ${0})/../bin/config.sh"
 # choose a name for the model to train
 #model_name="mst_frame_id_20130625"
 #model_name="ancestor_frame_id_20130626"
-model_name="ancestor_frame_id_partial_credit_20130627"
+model_name="hmm_en__miter2_N64_nsent1613710_alpha1_batchsize1000_"
+#model_name="hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB"
 
 # should set to roughly the number of cores available
 num_threads=8
-gc_threads=2
+gc_threads=2  # garbage collection
 
 classpath="${CLASSPATH}"
 # the directory that contains framenet.frame.element.map and framenet.original.map
@@ -21,7 +22,8 @@ datadir="${SEMAFOR_HOME}/training/data"
 # the directory the resulting model will end up in
 model_dir="${datadir}/${model_name}"
 
-id_features="ancestor"
+#id_features="ancestor"
+id_features="senna"
 
 old_model_dir="${MALT_MODEL_DIR}"
 
@@ -29,7 +31,7 @@ fn_id_req_data_file="${model_dir}/reqData.jobj"
 
 
 # paths to the gold-standard annotated sentences, and dependency-parsed version of it
-training_dir="${datadir}/naacl2012"
+training_dir="${datadir}/naacl2012_splits"
 fe_file="${training_dir}/cv.train.sentences.frame.elements"
 parsed_file="${training_dir}/cv.train.sentences.all.lemma.tags"
 fe_file_length=`wc -l ${fe_file}`

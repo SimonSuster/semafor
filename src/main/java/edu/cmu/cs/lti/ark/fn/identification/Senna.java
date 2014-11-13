@@ -18,9 +18,15 @@ import static edu.cmu.cs.lti.ark.util.IntRanges.xrange;
  * @author sthomson@cs.cmu.edu
  */
 public class Senna {
+    //sim, 4-11-2014
 	public static final int SENNA_VECTOR_DIM = 50;
+    //public static final int SENNA_VECTOR_DIM = 128;
 	public static final String DEFAULT_SENNA_WORDS_FILE = "senna/words.lst";
+	//public static final String DEFAULT_SENNA_WORDS_FILE = "/home/p262594/projects/paper@HMTreeMwithrelations/code/wordreps/hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB/posttype.plain.vocab";
+	//public static final String DEFAULT_SENNA_WORDS_FILE = "/home/p262594/projects/paper@HMTreeMwithrelations/code/wordreps/hmm_en__miter2_N64_nsent1613710_alpha1_batchsize1000_/posttype.plain.vocab";
 	public static final String DEFAULT_SENNA_VECTORS_FILE = "senna/embeddings.txt";
+    //public static final String DEFAULT_SENNA_VECTORS_FILE = "/home/p262594/projects/paper@HMTreeMwithrelations/code/wordreps/hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB/posttype_plain.txt";
+	//public static final String DEFAULT_SENNA_VECTORS_FILE = "/home/p262594/projects/paper@HMTreeMwithrelations/code/wordreps/hmm_en__miter2_N64_nsent1613710_alpha1_batchsize1000_/posttype_plain.txt";
 	private static InputSupplier<InputStream> DEFAULT_WORDS_SUPPLIER = new InputSupplier<InputStream>() {
 		@Override public InputStream getInput() throws IOException {
 			return getClass().getClassLoader().getResourceAsStream(DEFAULT_SENNA_WORDS_FILE);

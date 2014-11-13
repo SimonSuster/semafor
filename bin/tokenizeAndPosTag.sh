@@ -47,17 +47,19 @@ INPUT_FILE="${1}"
 OUTPUT_DIR="${2}"
 
 
-TOKENIZED="${OUTPUT_DIR}/tokenized"
+#TOKENIZED="${OUTPUT_DIR}/tokenized"
+TOKENIZED=${INPUT_FILE}
 POS_TAGGED="${OUTPUT_DIR}/pos.tagged"
 
+#sim use already tokenized file
 
-echo "**********************************************************************"
-echo "Tokenizing file: ${INPUT_FILE}"
-time sed -f ${SEMAFOR_HOME}/scripts/tokenizer.sed ${INPUT_FILE} > ${TOKENIZED}
-echo "Finished tokenization."
-echo "**********************************************************************"
-echo
-echo
+#echo "**********************************************************************"
+#echo "Tokenizing file: ${INPUT_FILE}"
+#time sed -f ${SEMAFOR_HOME}/scripts/tokenizer.sed ${INPUT_FILE} > ${TOKENIZED}
+#echo "Finished tokenization."
+#echo "**********************************************************************"
+#echo
+#echo
 
 echo "**********************************************************************"
 echo "Part-of-speech tagging tokenized data...."

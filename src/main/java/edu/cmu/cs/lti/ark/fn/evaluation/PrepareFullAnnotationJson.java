@@ -26,7 +26,7 @@ import com.google.common.base.Joiner;
 import com.google.common.collect.*;
 import edu.cmu.cs.lti.ark.fn.parsing.RankedScoredRoleAssignment;
 import edu.cmu.cs.lti.ark.fn.parsing.SemaforParseResult;
-import edu.cmu.cs.lti.ark.util.ds.*;
+import edu.cmu.cs.lti.ark.util.ds.Range0Based;
 
 import javax.annotation.Nullable;
 import java.io.*;

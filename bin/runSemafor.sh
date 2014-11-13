@@ -23,8 +23,9 @@ set -e # fail fast
 
 
 MY_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" > /dev/null && pwd )"
+echo my_dir=${MY_DIR}
 source "${MY_DIR}/config.sh"
-
+sleep 5
 if [ $# -lt 2 -o $# -gt 3 ]; then
    echo "USAGE: `basename "${0}"` <input-file> <output-file> <num-threads>"
    exit 1

@@ -1,0 +1,93 @@
++ set -e
+++ dirname ./runTestWithGoldTargets.sh
++ source ./../../training/config.sh
++++ dirname ./../../training/config.sh
+++ source ./../../training/../bin/config.sh
++++ export SEMAFOR_HOME=/home/p262594/Apps/semafor_fresh
++++ SEMAFOR_HOME=/home/p262594/Apps/semafor_fresh
++++ export CLASSPATH=.:/home/p262594/Apps/semafor_fresh/target/Semafor-3.0-alpha-04.jar
++++ CLASSPATH=.:/home/p262594/Apps/semafor_fresh/target/Semafor-3.0-alpha-04.jar
++++ export JAVA_HOME_BIN=/usr/bin
++++ JAVA_HOME_BIN=/usr/bin
++++ export MALT_MODEL_DIR=/home/p262594/Apps/semafor_fresh/semafor_malt_model_20121129
++++ MALT_MODEL_DIR=/home/p262594/Apps/semafor_fresh/semafor_malt_model_20121129
++++ echo 'Environment variables:'
+Environment variables:
++++ echo BASE_DIR=
+BASE_DIR=
++++ echo SEMAFOR_HOME=/home/p262594/Apps/semafor_fresh
+SEMAFOR_HOME=/home/p262594/Apps/semafor_fresh
++++ echo CLASSPATH=.:/home/p262594/Apps/semafor_fresh/target/Semafor-3.0-alpha-04.jar
+CLASSPATH=.:/home/p262594/Apps/semafor_fresh/target/Semafor-3.0-alpha-04.jar
++++ echo JAVA_HOME_BIN=/usr/bin
+JAVA_HOME_BIN=/usr/bin
++++ echo MALT_MODEL_DIR=/home/p262594/Apps/semafor_fresh/semafor_malt_model_20121129
+MALT_MODEL_DIR=/home/p262594/Apps/semafor_fresh/semafor_malt_model_20121129
+++ export model_name=semafor_malt_model_20121129
+++ model_name=semafor_malt_model_20121129
+++ export num_threads=4
+++ num_threads=4
+++ export gc_threads=2
+++ gc_threads=2
+++ export classpath=.:/home/p262594/Apps/semafor_fresh/target/Semafor-3.0-alpha-04.jar
+++ classpath=.:/home/p262594/Apps/semafor_fresh/target/Semafor-3.0-alpha-04.jar
+++ export datadir=/home/p262594/Apps/semafor_fresh/training/data
+++ datadir=/home/p262594/Apps/semafor_fresh/training/data
+++ export experiments_dir=/home/p262594/Apps/semafor_fresh/semafor_malt_model_20121129
+++ experiments_dir=/home/p262594/Apps/semafor_fresh/semafor_malt_model_20121129
+++ export model_dir=/home/p262594/Apps/semafor_fresh/semafor_malt_model_20121129/
+++ model_dir=/home/p262594/Apps/semafor_fresh/semafor_malt_model_20121129/
+++ export results_dir=/home/p262594/Apps/semafor_fresh/semafor_malt_model_20121129/results
+++ results_dir=/home/p262594/Apps/semafor_fresh/semafor_malt_model_20121129/results
+++ export id_features=ancestor
+++ id_features=ancestor
+++ export old_model_dir=/home/p262594/Apps/semafor_fresh/semafor_malt_model_20121129
+++ old_model_dir=/home/p262594/Apps/semafor_fresh/semafor_malt_model_20121129
+++ export fn_id_req_data_file=/home/p262594/Apps/semafor_fresh/semafor_malt_model_20121129//reqData.jobj
+++ fn_id_req_data_file=/home/p262594/Apps/semafor_fresh/semafor_malt_model_20121129//reqData.jobj
+++ export training_dir=/home/p262594/Apps/semafor_fresh/training/data/naacl2012
+++ training_dir=/home/p262594/Apps/semafor_fresh/training/data/naacl2012
+++ export fe_file=/home/p262594/Apps/semafor_fresh/training/data/naacl2012/cv.train.sentences.frame.elements
+++ fe_file=/home/p262594/Apps/semafor_fresh/training/data/naacl2012/cv.train.sentences.frame.elements
+++ export parsed_file=/home/p262594/Apps/semafor_fresh/training/data/naacl2012/cv.train.sentences.all.lemma.tags
+++ parsed_file=/home/p262594/Apps/semafor_fresh/training/data/naacl2012/cv.train.sentences.all.lemma.tags
++++ wc -l /home/p262594/Apps/semafor_fresh/training/data/naacl2012/cv.train.sentences.frame.elements
+wc: /home/p262594/Apps/semafor_fresh/training/data/naacl2012/cv.train.sentences.frame.elements: No such file or directory
+++ export fe_file_length=
+++ fe_file_length=
++++ expr
+expr: missing operand
+Try `expr --help' for more information.
+++ export fe_file_length=
+++ fe_file_length=
+++ export alphabet_file=/home/p262594/Apps/semafor_fresh/semafor_malt_model_20121129//alphabet.dat
+++ alphabet_file=/home/p262594/Apps/semafor_fresh/semafor_malt_model_20121129//alphabet.dat
+++ export SCAN_DIR=/home/p262594/Apps/semafor_fresh/semafor_malt_model_20121129//scan
+++ SCAN_DIR=/home/p262594/Apps/semafor_fresh/semafor_malt_model_20121129//scan
+++ echo num_threads=4
+num_threads=4
+++ echo gc_threads=2
+gc_threads=2
+++ echo datadir=/home/p262594/Apps/semafor_fresh/training/data
+datadir=/home/p262594/Apps/semafor_fresh/training/data
+++ echo id_features=ancestor
+id_features=ancestor
+++ echo fn_id_req_data_file=/home/p262594/Apps/semafor_fresh/semafor_malt_model_20121129//reqData.jobj
+fn_id_req_data_file=/home/p262594/Apps/semafor_fresh/semafor_malt_model_20121129//reqData.jobj
+++ echo training_dir=/home/p262594/Apps/semafor_fresh/training/data/naacl2012
+training_dir=/home/p262594/Apps/semafor_fresh/training/data/naacl2012
+++ echo fe_file=/home/p262594/Apps/semafor_fresh/training/data/naacl2012/cv.train.sentences.frame.elements
+fe_file=/home/p262594/Apps/semafor_fresh/training/data/naacl2012/cv.train.sentences.frame.elements
+++ echo parsed_file=/home/p262594/Apps/semafor_fresh/training/data/naacl2012/cv.train.sentences.all.lemma.tags
+parsed_file=/home/p262594/Apps/semafor_fresh/training/data/naacl2012/cv.train.sentences.all.lemma.tags
+++ echo fe_file_length=
+fe_file_length=
+++ echo alphabet_file=/home/p262594/Apps/semafor_fresh/semafor_malt_model_20121129//alphabet.dat
+alphabet_file=/home/p262594/Apps/semafor_fresh/semafor_malt_model_20121129//alphabet.dat
+++ echo SCAN_DIR=/home/p262594/Apps/semafor_fresh/semafor_malt_model_20121129//scan
+SCAN_DIR=/home/p262594/Apps/semafor_fresh/semafor_malt_model_20121129//scan
++ cv=dev
++ echo 'results directory: /home/p262594/Apps/semafor_fresh/semafor_malt_model_20121129/results'
+results directory: /home/p262594/Apps/semafor_fresh/semafor_malt_model_20121129/results
++ mkdir -p /home/p262594/Apps/semafor_fresh/semafor_malt_model_20121129/results
++ scala -classpath .:/home/p262594/Apps/semafor_fresh/target/Semafor-3.0-alpha-04.jar -J-Xmx3g /home/p262594/Apps/semafor_fresh/scripts/scoring/runWithGoldTargets.scala /home/p262594/Apps/semafor_fresh/semafor_malt_model_20121129/ /home/p262594/Apps/semafor_fresh/training/data/naacl2012/cv.dev.sentences.frames /home/p262594/Apps/semafor_fresh/training/data/naacl2012/cv.dev.sentences.maltparsed.conll /home/p262594/Apps/semafor_fresh/semafor_malt_model_20121129/results/dev.autoframe.predicted.xml

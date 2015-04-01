@@ -1,0 +1,88 @@
++ set -e
+++ dirname ./runTestWithGoldTargets.sh
++ source ./../../training/config.sh
++++ dirname ./../../training/config.sh
+++ source ./../../training/../bin/config.sh
++++ export SEMAFOR_HOME=/home/p262594/Apps/semafor_dev
++++ SEMAFOR_HOME=/home/p262594/Apps/semafor_dev
++++ export CLASSPATH=.:/home/p262594/Apps/semafor_dev/target/Semafor-3.0-alpha-04.jar
++++ CLASSPATH=.:/home/p262594/Apps/semafor_dev/target/Semafor-3.0-alpha-04.jar
++++ export JAVA_HOME_BIN=/usr/bin
++++ JAVA_HOME_BIN=/usr/bin
++++ export MALT_MODEL_DIR=/home/p262594/Apps/semafor/training/data/retrain_simple
++++ MALT_MODEL_DIR=/home/p262594/Apps/semafor/training/data/retrain_simple
++++ echo 'Environment variables:'
+Environment variables:
++++ echo SEMAFOR_HOME=/home/p262594/Apps/semafor_dev
+SEMAFOR_HOME=/home/p262594/Apps/semafor_dev
++++ echo CLASSPATH=.:/home/p262594/Apps/semafor_dev/target/Semafor-3.0-alpha-04.jar
+CLASSPATH=.:/home/p262594/Apps/semafor_dev/target/Semafor-3.0-alpha-04.jar
++++ echo JAVA_HOME_BIN=/usr/bin
+JAVA_HOME_BIN=/usr/bin
++++ echo MALT_MODEL_DIR=/home/p262594/Apps/semafor/training/data/retrain_simple
+MALT_MODEL_DIR=/home/p262594/Apps/semafor/training/data/retrain_simple
+++ export model_name=hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB_noncumulative
+++ model_name=hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB_noncumulative
+++ export num_threads=4
+++ num_threads=4
+++ export gc_threads=2
+++ gc_threads=2
+++ export classpath=.:/home/p262594/Apps/semafor_dev/target/Semafor-3.0-alpha-04.jar
+++ classpath=.:/home/p262594/Apps/semafor_dev/target/Semafor-3.0-alpha-04.jar
+++ export datadir=/home/p262594/Apps/semafor_dev/training/data
+++ datadir=/home/p262594/Apps/semafor_dev/training/data
+++ export experiments_dir=/home/p262594/Apps/semafor_dev/training/data/hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB_noncumulative
+++ experiments_dir=/home/p262594/Apps/semafor_dev/training/data/hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB_noncumulative
+++ export model_dir=/home/p262594/Apps/semafor_dev/training/data/hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB_noncumulative
+++ model_dir=/home/p262594/Apps/semafor_dev/training/data/hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB_noncumulative
+++ export results_dir=/home/p262594/Apps/semafor_dev/training/data/hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB_noncumulative/results
+++ results_dir=/home/p262594/Apps/semafor_dev/training/data/hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB_noncumulative/results
+++ export id_features=senna
+++ id_features=senna
+++ export old_model_dir=/home/p262594/Apps/semafor/training/data/retrain_simple
+++ old_model_dir=/home/p262594/Apps/semafor/training/data/retrain_simple
+++ export fn_id_req_data_file=/home/p262594/Apps/semafor_dev/training/data/hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB_noncumulative/reqData.jobj
+++ fn_id_req_data_file=/home/p262594/Apps/semafor_dev/training/data/hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB_noncumulative/reqData.jobj
+++ export training_dir=/home/p262594/Apps/semafor_dev/training/data/naacl2012_splits
+++ training_dir=/home/p262594/Apps/semafor_dev/training/data/naacl2012_splits
+++ export fe_file=/home/p262594/Apps/semafor_dev/training/data/naacl2012_splits/cv.train.sentences.frame.elements
+++ fe_file=/home/p262594/Apps/semafor_dev/training/data/naacl2012_splits/cv.train.sentences.frame.elements
+++ export parsed_file=/home/p262594/Apps/semafor_dev/training/data/naacl2012_splits/cv.train.sentences.all.lemma.tags
+++ parsed_file=/home/p262594/Apps/semafor_dev/training/data/naacl2012_splits/cv.train.sentences.all.lemma.tags
++++ wc -l /home/p262594/Apps/semafor_dev/training/data/naacl2012_splits/cv.train.sentences.frame.elements
+++ export 'fe_file_length=15019 /home/p262594/Apps/semafor_dev/training/data/naacl2012_splits/cv.train.sentences.frame.elements'
+++ fe_file_length='15019 /home/p262594/Apps/semafor_dev/training/data/naacl2012_splits/cv.train.sentences.frame.elements'
++++ expr 15019
+++ export fe_file_length=15019
+++ fe_file_length=15019
+++ export alphabet_file=/home/p262594/Apps/semafor_dev/training/data/hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB_noncumulative/alphabet.dat
+++ alphabet_file=/home/p262594/Apps/semafor_dev/training/data/hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB_noncumulative/alphabet.dat
+++ export SCAN_DIR=/home/p262594/Apps/semafor_dev/training/data/hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB_noncumulative/scan
+++ SCAN_DIR=/home/p262594/Apps/semafor_dev/training/data/hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB_noncumulative/scan
+++ echo num_threads=4
+num_threads=4
+++ echo gc_threads=2
+gc_threads=2
+++ echo datadir=/home/p262594/Apps/semafor_dev/training/data
+datadir=/home/p262594/Apps/semafor_dev/training/data
+++ echo id_features=senna
+id_features=senna
+++ echo fn_id_req_data_file=/home/p262594/Apps/semafor_dev/training/data/hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB_noncumulative/reqData.jobj
+fn_id_req_data_file=/home/p262594/Apps/semafor_dev/training/data/hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB_noncumulative/reqData.jobj
+++ echo training_dir=/home/p262594/Apps/semafor_dev/training/data/naacl2012_splits
+training_dir=/home/p262594/Apps/semafor_dev/training/data/naacl2012_splits
+++ echo fe_file=/home/p262594/Apps/semafor_dev/training/data/naacl2012_splits/cv.train.sentences.frame.elements
+fe_file=/home/p262594/Apps/semafor_dev/training/data/naacl2012_splits/cv.train.sentences.frame.elements
+++ echo parsed_file=/home/p262594/Apps/semafor_dev/training/data/naacl2012_splits/cv.train.sentences.all.lemma.tags
+parsed_file=/home/p262594/Apps/semafor_dev/training/data/naacl2012_splits/cv.train.sentences.all.lemma.tags
+++ echo fe_file_length=15019
+fe_file_length=15019
+++ echo alphabet_file=/home/p262594/Apps/semafor_dev/training/data/hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB_noncumulative/alphabet.dat
+alphabet_file=/home/p262594/Apps/semafor_dev/training/data/hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB_noncumulative/alphabet.dat
+++ echo SCAN_DIR=/home/p262594/Apps/semafor_dev/training/data/hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB_noncumulative/scan
+SCAN_DIR=/home/p262594/Apps/semafor_dev/training/data/hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB_noncumulative/scan
++ cv=test
++ echo 'results directory: /home/p262594/Apps/semafor_dev/training/data/hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB_noncumulative/results'
+results directory: /home/p262594/Apps/semafor_dev/training/data/hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB_noncumulative/results
++ mkdir -p /home/p262594/Apps/semafor_dev/training/data/hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB_noncumulative/results
++ scala -classpath .:/home/p262594/Apps/semafor_dev/target/Semafor-3.0-alpha-04.jar -J-Xmx3g /home/p262594/Apps/semafor_dev/scripts/scoring/runWithGoldTargets.scala /home/p262594/Apps/semafor_dev/training/data/hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB_noncumulative /home/p262594/Apps/semafor_dev/training/data/naacl2012_splits/cv.test.sentences.frames /home/p262594/Apps/semafor_dev/training/data/naacl2012_splits/cv.test.sentences.maltparsed.conll /home/p262594/Apps/semafor_dev/training/data/hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB_noncumulative/results/test.autoframe.predicted.xml

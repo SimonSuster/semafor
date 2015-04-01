@@ -19,6 +19,7 @@ dependency-reduced-pom.xml
 
 # training data we don't include in the repo
 training/data/naacl2012*
+semafor_malt_model_20121129/
 
 # log
 training/data/log

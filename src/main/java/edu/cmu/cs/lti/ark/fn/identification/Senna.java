@@ -11,9 +11,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.List;
 import java.util.Map;
-import java.util.Arrays;
-import java.util.Map.Entry;
-import java.util.Set;
 
 import static edu.cmu.cs.lti.ark.util.IntRanges.xrange;
 
@@ -56,7 +53,7 @@ public class Senna {
 	private static InputSupplier<InputStream> DEFAULT_VECTORS_SUPPLIER = new InputSupplier<InputStream>() {
 		@Override public InputStream getInput() throws IOException {
 			System.out.println(DEFAULT_SENNA_VECTORS_FILE);
-			return getClass().getClassLoader().getResourceAsStream(DEFAULT_SENNA_VECTORS_FILE);
+            return getClass().getClassLoader().getResourceAsStream(DEFAULT_SENNA_VECTORS_FILE);
 		} };
 
 	private final Map<String, double[]> embeddings;
@@ -92,21 +89,10 @@ public class Senna {
 			}
 			embeddings.put(words.get(i), vector);
 		}
-
 		return embeddings;
 	}
 
 	public Optional<double[]> getEmbedding(String word) {
-		//final String lower = word.toLowerCase();
-		//return Optional.fromNullable(embeddings.get(lower));
-	    //		System.out.println("Embeddings ");
-	    //	    for (String name: embeddings.keySet()){
-	    // 	String key =name.toString();
-	    // 	String value = Arrays.toString(embeddings.get(name));//.toString();  
-	    // 	System.out.println(key + " " + value);  
-	    //} 
-		
-		//0
 		return Optional.fromNullable(embeddings.get(word));
 	}
 }

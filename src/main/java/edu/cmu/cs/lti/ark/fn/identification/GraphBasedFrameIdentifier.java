@@ -3,10 +3,14 @@ package edu.cmu.cs.lti.ark.fn.identification;
 import com.google.common.base.Joiner;
 import com.google.common.base.Optional;
 import com.google.common.collect.Lists;
-import edu.cmu.cs.lti.ark.fn.Semafor;
 import edu.cmu.cs.lti.ark.fn.data.prep.formats.Sentence;
 import edu.cmu.cs.lti.ark.fn.data.prep.formats.Token;
+import edu.cmu.cs.lti.ark.fn.identification.latentmodel.LatentFeatureExtractor;
+import edu.cmu.cs.lti.ark.fn.Semafor;
+import edu.cmu.cs.lti.ark.fn.wordnet.CachedRelations;
+import edu.cmu.cs.lti.ark.fn.wordnet.Relations;
 import edu.cmu.cs.lti.ark.util.ds.Pair;
+import edu.cmu.cs.lti.ark.util.nlp.MorphaLemmatizer;
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import gnu.trove.TObjectDoubleHashMap;
@@ -44,7 +48,6 @@ public class GraphBasedFrameIdentifier extends FastFrameIdentifier {
 	public static GraphBasedFrameIdentifier getInstance(String modelDirectory) throws IOException, ClassNotFoundException {
 		final String graphFilename = new File(modelDirectory, GRAPH_FILENAME).getAbsolutePath();
 		final String idParamsFile = new File(modelDirectory, ID_MODEL_FILE).getAbsolutePath();
-		System.err.println(idParamsFile);
 		final String requiredDataFilename = new File(modelDirectory, Semafor.REQUIRED_DATA_FILENAME).getAbsolutePath();
 		System.err.println("Initializing frame identification model...");
 		System.err.println("Reading serialized required data");
@@ -54,18 +57,20 @@ public class GraphBasedFrameIdentifier extends FastFrameIdentifier {
 		final SmoothedGraph graph = readObject(graphFilename);
 		System.err.println("Read graph successfully.");
 		System.err.println("Reading model parameters...");
-	//	try {
-			final Pair<IdFeatureExtractor,TObjectDoubleHashMap<String>> extractorAndParams =
-					FrameIdentificationRelease.parseParamFile(idParamsFile);
-			System.err.println("Done reading model parameters.");
-			final IdFeatureExtractor featureExtractor = extractorAndParams.first;
-			final TObjectDoubleHashMap<String> params = extractorAndParams.second;
-			return new GraphBasedFrameIdentifier(
-					featureExtractor,
-					r.getFrameMap().keySet(),
-					r.getcMap(),
-					params,
-					graph);
+
+		//try {
+        final Pair<IdFeatureExtractor,TObjectDoubleHashMap<String>> extractorAndParams =
+                FrameIdentificationRelease.parseParamFile(idParamsFile);
+        System.err.println("Done reading model parameters.");
+        final IdFeatureExtractor featureExtractor = extractorAndParams.first;
+        final TObjectDoubleHashMap<String> params = extractorAndParams.second;
+        return new GraphBasedFrameIdentifier(
+                featureExtractor,
+                r.getFrameMap().keySet(),
+                r.getcMap(),
+                params,
+                graph);
+
 		//} catch (NullPointerException e) { // TODO: this is a gross way to fallback
 		//	final TObjectDoubleHashMap<String> params =
 	//				FrameIdentificationRelease.readOldModel(idParamsFile);
@@ -81,6 +86,7 @@ public class GraphBasedFrameIdentifier extends FastFrameIdentifier {
 	//				params,
 	//				graph);
 	//	}
+
 	}
 
 	@Override

@@ -31,6 +31,7 @@ public class IdFeatureExtractor {
 	private final boolean useSentenceContextFeatures;
 	private final FrameFeatureExtractor frameFeatureExtractor;
 	private final Optional<SennaFeatureExtractor> sennaFeatureExtractor;
+
 	private final Optional<SennaFeatureExtractor> sennaSynFeatureExtractor;
 
 	private final int sennaVectorDim = 128;
@@ -72,6 +73,7 @@ public class IdFeatureExtractor {
 					public IdFeatureExtractor get() { return new IdFeatureExtractor(false, false, false, true); }
 				});
 		System.err.println(name);
+
 		return featureExtractorMap.get(name.trim().toLowerCase()).get();
 	}
 

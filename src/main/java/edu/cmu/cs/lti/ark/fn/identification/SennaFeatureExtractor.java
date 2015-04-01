@@ -6,7 +6,6 @@ import edu.cmu.cs.lti.ark.fn.data.prep.formats.Sentence;
 import edu.cmu.cs.lti.ark.fn.data.prep.formats.Token;
 import edu.cmu.cs.lti.ark.util.nlp.parse.DependencyParse;
 import gnu.trove.THashSet;
-
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
@@ -122,8 +121,6 @@ public class SennaFeatureExtractor {
 				features.putAll(FrameFeatureExtractor.conjoin(FIVE_WORD_WINDOW_NAMES[i], sennaFeaturesForWord));
 			}
 		}
-		//System.err.println("Features size: ");
-		//System.err.println(features.size());
 		return features;
 	}
 
@@ -132,7 +129,6 @@ public class SennaFeatureExtractor {
 		final Optional<double[]> oEmbedding = senna.getEmbedding(word);
 
 		if (oEmbedding.isPresent()) {
-		    //		    System.err.println("present");
 			final double[] embedding = oEmbedding.get();
 			for (int i : xrange(embedding.length))  {
 			    features.put(String.format("senna%02d", i), embedding[i]);

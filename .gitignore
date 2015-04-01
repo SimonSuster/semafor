@@ -1,0 +1,40 @@
+# Compiled artifacts
+*.class
+*.pyc
+target/
+dependency-reduced-pom.xml
+
+# IDE cruft
+.idea
+*.iml
+.classpath
+.project
+.pydevproject
+
+# Emacs cruft
+*\~
+
+# Mac cruft
+.DS_Store
+
+# training data we don't include in the repo
+training/data/naacl2012*
+
+# log
+training/data/log
+
+# model results
+training/data/w2v128
+training/data/basic_deplabelHead
+training/data/senna_WINDOW0
+training/data/hmm_en__miter2_N64_nsent1613710_alpha1_batchsize1000_WINDOW0
+training/data/brown128onehot
+training/data/hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB_noncumulative
+training/data/hmm_en__miter2_N64_nsent1613710_alpha1_batchsize1000_
+training/data/hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB_plain
+training/data/hmm_en_tree_miter2_N64_nsent1613710_alpha1_batchsize1000_
+training/data/treebrown128onehot
+training/data/basic
+training/data/brown128
+training/data/naacl2012_splits
+training/data/framenet15

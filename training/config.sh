@@ -8,20 +8,20 @@ source "$(dirname "${BASH_SOURCE[0]}")/../bin/config.sh"
 
 #export model_name="basic"
 #export model_name="basic_deplabelHead"
-#export model_name="senna_WINDOW0"
+export model_name="senna"
 #export model_name="hmm_en__miter2_N64_nsent1613710_alpha1_batchsize1000_"
 #export model_name="brown128onehot"
 #export model_name="w2v128"
 #export model_name="hmm_en_tree_miter2_N64_nsent1613710_alpha1_batchsize1000_"
-export model_name="hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB_noncumulative"
+#export model_name="hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB_noncumulative"
 #export model_name="hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB_plain"
 #export id_features="ancestor"
-#export id_features="senna"
+export id_features="senna"
 
 
 
 # should set to roughly the number of cores available
-export num_threads=14
+export num_threads=4
 export gc_threads=2  # garbage collection
 
 export classpath="${CLASSPATH}"
@@ -37,7 +37,7 @@ export results_dir="${experiments_dir}/results"
 
 export id_features="senna"
 
-export old_model_dir="${MALT_MODEL_DIR}"
+export old_model_dir=${MALT_MODEL_DIR}
 
 export fn_id_req_data_file="${model_dir}/reqData.jobj"
 

@@ -21,9 +21,9 @@ public class Senna {
 	//public static final int SENNA_VECTOR_DIM = 50;
     //public static final int SENNA_VECTOR_DIM = 128;
 	static int sennaVectorDim;
-    //	public static final String DEFAULT_SENNA_WORDS_FILE = "senna/words.lst";
+	public static final String DEFAULT_SENNA_WORDS_FILE = "senna/words.lst";
     //public static final String DEFAULT_SENNA_WORDS_FILE = "senna/posttype_cumul_plain.vocab";
-    public static final String DEFAULT_SENNA_WORDS_FILE = "wordreps/hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB/posttype_cumul_plain.vocab";
+    //public static final String DEFAULT_SENNA_WORDS_FILE = "wordreps/hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB/posttype_cumul_plain.vocab";
     //public static final String DEFAULT_SENNA_WORDS_FILE = "wordreps/hmm_en_tree_miter2_N64_nsent1613710_alpha1_batchsize1000_/posttype_plain.vocab";
     //public static final String DEFAULT_SENNA_WORDS_FILE = "wordreps/hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB/posttype_wordrel_plain.vocab";
 	//public static final String DEFAULT_SENNA_WORDS_FILE = "wordreps/hmm_en__miter2_N64_nsent1613710_alpha1_batchsize1000_/posttype_plain.vocab";
@@ -31,9 +31,9 @@ public class Senna {
 
 	//public static final String DEFAULT_SENNA_WORDS_FILE = "/home/p262594/projects/paper@HMTreeMwithrelations/code/wordreps/hmm_en_tree_miter2_N64_nsent1613710_alpha1_batchsize1000_/posttype_plain.vocab";
 
-    //	public static final String DEFAULT_SENNA_VECTORS_FILE = "senna/embeddings.txt";
+	public static final String DEFAULT_SENNA_VECTORS_FILE = "senna/embeddings.txt";
 	//public static final String DEFAULT_SENNA_VECTORS_FILE = "senna/posttype_cumul_plain.txt";
-    public static final String DEFAULT_SENNA_VECTORS_FILE = "wordreps/hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB/posttype_cumul_plain.txt";
+    //public static final String DEFAULT_SENNA_VECTORS_FILE = "wordreps/hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB/posttype_cumul_plain.txt";
     //public static final String DEFAULT_SENNA_VECTORS_FILE = "wordreps/hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB/posttype_wordrel_plain.txt";
     	//public static final String DEFAULT_SENNA_VECTORS_FILE = "wordreps/hmm_en__miter2_N64_nsent1613710_alpha1_batchsize1000_/posttype_plain.txt";
     //public static final String DEFAULT_SENNA_VECTORS_FILE = "wordreps/hmm_en_tree_miter2_N64_nsent1613710_alpha1_batchsize1000_/posttype_plain.txt";

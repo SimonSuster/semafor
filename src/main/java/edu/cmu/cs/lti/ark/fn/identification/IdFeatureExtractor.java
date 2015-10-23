@@ -34,7 +34,7 @@ public class IdFeatureExtractor {
 
 	private final Optional<SennaFeatureExtractor> sennaSynFeatureExtractor;
 
-	private final int sennaVectorDim = 128;
+	private final int sennaVectorDim = 50;
 
 	public IdFeatureExtractor(boolean useSentenceContextFeatures, boolean useAncestors, boolean useSenna, boolean useSennaSyn) {
 		this.useSentenceContextFeatures = useSentenceContextFeatures;

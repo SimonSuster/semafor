@@ -37,5 +37,5 @@ mkdir -p "${model_dir}"
 #      revisedmapfile:${revised_map_file} \
 #      lemmacachefile:${lemma_cache_file} \
 #      fnidreqdatafile:${fn_id_req_data_file}
-
+#echo ${old_model_dir}/{*.{map,jobj,ser,conf,mco,gz},argmodel.dat}
 ln -s "${old_model_dir}/"{*.{map,jobj,ser,conf,mco,gz},argmodel.dat} "${model_dir}/"

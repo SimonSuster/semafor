@@ -21,7 +21,8 @@ public class Senna {
 	//public static final int SENNA_VECTOR_DIM = 50;
     //public static final int SENNA_VECTOR_DIM = 128;
 	static int sennaVectorDim;
-	public static final String DEFAULT_SENNA_WORDS_FILE = "senna/words.lst";
+	//public static final String DEFAULT_SENNA_WORDS_FILE = "senna/words.lst";
+	public static final String DEFAULT_SENNA_WORDS_FILE = "sg_czeng.en_lH_lL2_lr0.1_e1e-06_mb1000_min20_max100000_ep3_neg1_s1e08_dim50_del0_downFalse_win5_sfac1e-03_lcrossentropy_oAdagrad/W_v.txt";
     //public static final String DEFAULT_SENNA_WORDS_FILE = "senna/posttype_cumul_plain.vocab";
     //public static final String DEFAULT_SENNA_WORDS_FILE = "wordreps/hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB/posttype_cumul_plain.vocab";
     //public static final String DEFAULT_SENNA_WORDS_FILE = "wordreps/hmm_en_tree_miter2_N64_nsent1613710_alpha1_batchsize1000_/posttype_plain.vocab";
@@ -31,7 +32,8 @@ public class Senna {
 
 	//public static final String DEFAULT_SENNA_WORDS_FILE = "/home/p262594/projects/paper@HMTreeMwithrelations/code/wordreps/hmm_en_tree_miter2_N64_nsent1613710_alpha1_batchsize1000_/posttype_plain.vocab";
 
-	public static final String DEFAULT_SENNA_VECTORS_FILE = "senna/embeddings.txt";
+	//public static final String DEFAULT_SENNA_VECTORS_FILE = "senna/embeddings.txt";
+	public static final String DEFAULT_SENNA_VECTORS_FILE = "sg_czeng.en_lH_lL2_lr0.1_e1e-06_mb1000_min20_max100000_ep3_neg1_s1e08_dim50_del0_downFalse_win5_sfac1e-03_lcrossentropy_oAdagrad/W_e.txt";
 	//public static final String DEFAULT_SENNA_VECTORS_FILE = "senna/posttype_cumul_plain.txt";
     //public static final String DEFAULT_SENNA_VECTORS_FILE = "wordreps/hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB/posttype_cumul_plain.txt";
     //public static final String DEFAULT_SENNA_VECTORS_FILE = "wordreps/hmm_en_rel_miter2_N64_nsent1613710_alpha1_batchsize1000_NMOD-PMOD-SUB/posttype_wordrel_plain.txt";

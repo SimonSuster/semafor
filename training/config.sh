@@ -21,8 +21,8 @@ export id_features="senna"
 
 
 # should set to roughly the number of cores available
-export num_threads=4
-export gc_threads=2  # garbage collection
+export num_threads=10
+export gc_threads=4  # garbage collection
 
 export classpath="${CLASSPATH}"
 # the directory that contains framenet.frame.element.map and framenet.original.map

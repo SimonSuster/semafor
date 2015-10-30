@@ -121,8 +121,8 @@ public class SennaFeatureExtractor {
 				features.putAll(FrameFeatureExtractor.conjoin(FIVE_WORD_WINDOW_NAMES[i], sennaFeaturesForWord));
 			}
 		}
-		System.err.println("Features size: ");
-		System.err.println(features.size());
+		//System.err.println("Features size: ");
+		//System.err.println(features.size());
 		return features;
 	}
 

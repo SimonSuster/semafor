@@ -10,14 +10,14 @@ echo "results directory: ${results_dir}"
 mkdir -p "${results_dir}"
 
 
-#echo classpath="${CLASSPATH}"
+echo classpath="${CLASSPATH}"
 #***************** Run SEMAFOR with Gold Targets, Auto Frame-id, Auto Arg-id ***********************#
 
-#scala -classpath ${CLASSPATH}  -J-Xmx3g "${SEMAFOR_HOME}/scripts/scoring/runWithGoldTargets.scala" \
-#    "${model_dir}" \
-#    "${training_dir}/cv.${cv}.sentences.frames" \
-#    "${training_dir}/cv.${cv}.sentences.maltparsed.conll" \
-#    "${results_dir}/${cv}.autoframe.predicted.xml"
+scala -classpath ${CLASSPATH}  -J-Xmx3g "${SEMAFOR_HOME}/scripts/scoring/runWithGoldTargets.scala" \
+    "${model_dir}" \
+    "${training_dir}/cv.${cv}.sentences.frames" \
+    "${training_dir}/cv.${cv}.sentences.maltparsed.conll" \
+    "${results_dir}/${cv}.autoframe.predicted.xml"
 
 scala -classpath ${CLASSPATH} -J-Xmx3g "${SEMAFOR_HOME}/scripts/scoring/runWithGoldTargets.scala" \
     "${model_dir}" \

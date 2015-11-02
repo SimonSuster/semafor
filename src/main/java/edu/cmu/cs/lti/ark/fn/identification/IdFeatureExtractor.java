@@ -35,12 +35,13 @@ public class IdFeatureExtractor {
 	private final Optional<SennaFeatureExtractor> sennaSynFeatureExtractor;
 
 	private final int sennaVectorDim = 50;
+	private final int nSenses = 3;
 
 	public IdFeatureExtractor(boolean useSentenceContextFeatures, boolean useAncestors, boolean useSenna, boolean useSennaSyn) {
 		this.useSentenceContextFeatures = useSentenceContextFeatures;
 		try {
-			sennaFeatureExtractor = useSenna ? Optional.of(SennaFeatureExtractor.load(sennaVectorDim, false)) : Optional.<SennaFeatureExtractor>absent();
-			sennaSynFeatureExtractor = useSennaSyn ? Optional.of(SennaFeatureExtractor.load(sennaVectorDim, true)) : Optional.<SennaFeatureExtractor>absent();
+			sennaFeatureExtractor = useSenna ? Optional.of(SennaFeatureExtractor.load(sennaVectorDim, nSenses, false)) : Optional.<SennaFeatureExtractor>absent();
+			sennaSynFeatureExtractor = useSennaSyn ? Optional.of(SennaFeatureExtractor.load(sennaVectorDim, nSenses, true)) : Optional.<SennaFeatureExtractor>absent();
 			frameFeatureExtractor = useAncestors ? AncestorFrameFeatureExtractor.load() : new BasicFrameFeatureExtractor();
 		} catch (IOException e) { throw new RuntimeException(e); }
 	}

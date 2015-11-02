@@ -38,8 +38,8 @@ public class SennaFeatureExtractor {
 	    this.useSyntactic = useSyntactic;
 	}
 
-	public static SennaFeatureExtractor load(int sennaVectorDim, boolean useSyntactic) throws IOException {
-		return new SennaFeatureExtractor(Senna.load(sennaVectorDim), useSyntactic);
+	public static SennaFeatureExtractor load(int sennaVectorDim, int nSenses, boolean useSyntactic) throws IOException {
+		return new SennaFeatureExtractor(Senna.load(sennaVectorDim, nSenses), useSyntactic);
 	}
 
 	private static THashSet<String> getActiveSynFun() {
@@ -108,17 +108,17 @@ public class SennaFeatureExtractor {
 			final int idx = headIdx - 2 + i;
 			if (idx >= 0 && idx < sentence.size()) {
 				final String form = tokens.get(idx).getForm();
-				final Map<String, Double> sennaFeaturesForWord;
+				final Map<String, Double> sennaFeaturesForWordFromContext;
 				if (useSyntactic) {
 					final String synFun;
 					//use rather some default map
 					if (synFunMap.get(nodes[idx + 1].getLabelType()) == null) synFun = DUMMY_SYN_FUN;
 					else synFun = synFunMap.get(nodes[idx + 1].getLabelType());
-					sennaFeaturesForWord = getSennaFeaturesForWord(form + synFun);
+					sennaFeaturesForWordFromContext = getSennaFeaturesForWordFromContext(form + synFun, idx, tokens);
 				}
-				else sennaFeaturesForWord = getSennaFeaturesForWord(form);
+				else sennaFeaturesForWordFromContext = getSennaFeaturesForWordFromContext(form, idx, tokens);
 				//0
-				features.putAll(FrameFeatureExtractor.conjoin(FIVE_WORD_WINDOW_NAMES[i], sennaFeaturesForWord));
+				features.putAll(FrameFeatureExtractor.conjoin(FIVE_WORD_WINDOW_NAMES[i], sennaFeaturesForWordFromContext));
 			}
 		}
 		//System.err.println("Features size: ");
@@ -126,14 +126,28 @@ public class SennaFeatureExtractor {
 		return features;
 	}
 
-	public Map<String, Double> getSennaFeaturesForWord(String word) {
+	//public Map<String, Double> getSennaFeaturesForWord(String word) {
+	//	final Map<String, Double> features = Maps.newHashMap();
+//		final Optional<double[]> oEmbedding = senna.getEmbedding(word);
+//
+//		if (oEmbedding.isPresent()) {
+//			final double[] embedding = oEmbedding.get();
+//			for (int i : xrange(embedding.length))  {
+//			    features.put(String.format("senna%02d", i), embedding[i]);
+//			}
+//		}
+//		//0
+//		return features;
+//	}
+
+	public Map<String, Double> getSennaFeaturesForWordFromContext(String word, int idx, List<Token> tokens) {
 		final Map<String, Double> features = Maps.newHashMap();
-		final Optional<double[]> oEmbedding = senna.getEmbedding(word);
+		final Optional<double[]> oEmbedding = senna.getEmbeddingFromContext(word, idx, tokens);
 
 		if (oEmbedding.isPresent()) {
 			final double[] embedding = oEmbedding.get();
 			for (int i : xrange(embedding.length))  {
-			    features.put(String.format("senna%02d", i), embedding[i]);
+				features.put(String.format("sennac%02d", i), embedding[i]);
 			}
 		}
 		//0

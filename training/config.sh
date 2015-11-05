@@ -9,9 +9,10 @@ source "$(dirname "${BASH_SOURCE[0]}")/../bin/config.sh"
 #export model_name="basic"
 #export model_name="basic_deplabelHead"
 #export model_name="senna"
-#export model_name="bimu3_czeng.en_lH_lL2_lr0.1_e1e-06_mb1000_min20_max100000_ep3_neg1_s1e08_dim50_del0_downFalse_win5_winf1_sfac1e-03_lcrossentropy_oAdagrad"
+export model_name="dbg_bimu"
 #export model_name="senses3_czeng.en_lH_lL2_lr0.1_e1e-06_mb1000_min20_max100000_ep3_neg1_s1e08_dim50_del0_downFalse_win5_sfac1e-03_lcrossentropy_oAdagrad"
-export model_name="dbg_senses"
+#export model_name="avgExp_senses3_czeng.en_lH_lL2_lr0.1_e1e-06_mb1000_min20_max100000_ep3_neg1_s1e08_dim50_del0_downFalse_win5_sfac1e-03_lcrossentropy_oAdagrad"
+#export model_name="dbg_senses"
 #export model_name="hmm_en__miter2_N64_nsent1613710_alpha1_batchsize1000_"
 #export model_name="brown128onehot"
 #export model_name="w2v128"
@@ -24,7 +25,7 @@ export id_features="senna"
 
 
 # should set to roughly the number of cores available
-export num_threads=4
+export num_threads=1
 export gc_threads=2  # garbage collection
 
 export classpath="${CLASSPATH}"
@@ -37,9 +38,6 @@ export model_dir="${experiments_dir}"
 export results_dir="${experiments_dir}/results"
 
 # the directory the resulting model will end up in
-
-export id_features="senna"
-
 export old_model_dir=${MALT_MODEL_DIR}
 
 export fn_id_req_data_file="${model_dir}/reqData.jobj"

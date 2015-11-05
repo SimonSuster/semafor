@@ -9,6 +9,7 @@ import gnu.trove.THashSet;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+import java.util.Arrays;
 
 import static edu.cmu.cs.lti.ark.util.IntRanges.xrange;
 import static edu.cmu.cs.lti.ark.util.nlp.parse.DependencyParse.getHeuristicHead;
@@ -146,6 +147,7 @@ public class SennaFeatureExtractor {
 
 		if (oEmbedding.isPresent()) {
 			final double[] embedding = oEmbedding.get();
+
 			for (int i : xrange(embedding.length))  {
 				features.put(String.format("sennac%02d", i), embedding[i]);
 			}

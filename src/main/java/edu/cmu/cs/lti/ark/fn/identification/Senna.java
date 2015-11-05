@@ -11,6 +11,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.List;
 import java.util.Map;
+import java.util.Arrays;
 
 import edu.cmu.cs.lti.ark.fn.data.prep.formats.Token;
 import static edu.cmu.cs.lti.ark.util.IntRanges.xrange;
@@ -24,9 +25,9 @@ public class Senna {
 	static int nSenses;
 	static int sennaVectorDim;
 
-    public static final String DEFAULT_SENNA_WORDS_FILE = "senses3_czeng.en_lH_lL2_lr0.1_e1e-06_mb1000_min20_max100000_ep3_neg1_s1e08_dim50_del0_downFalse_win5_sfac1e-03_lcrossentropy_oAdagrad/W_v.txt";
-    public static final String DEFAULT_SENNA_VECTORS_FILE = "senses3_czeng.en_lH_lL2_lr0.1_e1e-06_mb1000_min20_max100000_ep3_neg1_s1e08_dim50_del0_downFalse_win5_sfac1e-03_lcrossentropy_oAdagrad/W_e.txt";
-	public static final String DEFAULT_SENNA_CVECTORS_FILE = "senses3_czeng.en_lH_lL2_lr0.1_e1e-06_mb1000_min20_max100000_ep3_neg1_s1e08_dim50_del0_downFalse_win5_sfac1e-03_lcrossentropy_oAdagrad/W_c.txt";
+    public static final String DEFAULT_SENNA_WORDS_FILE = "bimu3_czeng.en_lH_lL2_lr0.1_e1e-06_mb1000_min20_max100000_ep3_neg1_s1e08_dim50_del0_downFalse_win5_winf1_sfac1e-03_lcrossentropy_oAdagrad/W_v.txt";
+    public static final String DEFAULT_SENNA_VECTORS_FILE = "bimu3_czeng.en_lH_lL2_lr0.1_e1e-06_mb1000_min20_max100000_ep3_neg1_s1e08_dim50_del0_downFalse_win5_winf1_sfac1e-03_lcrossentropy_oAdagrad/W_e.txt";
+	public static final String DEFAULT_SENNA_CVECTORS_FILE = "bimu3_czeng.en_lH_lL2_lr0.1_e1e-06_mb1000_min20_max100000_ep3_neg1_s1e08_dim50_del0_downFalse_win5_winf1_sfac1e-03_lcrossentropy_oAdagrad/W_c.txt";
 
 	private static InputSupplier<InputStream> DEFAULT_WORDS_SUPPLIER = new InputSupplier<InputStream>() {
 		@Override public InputStream getInput() throws IOException {
@@ -155,6 +156,9 @@ public class Senna {
 			for (int i : xrange(sensembs.length)) {
 				acts[i] = dotProduct(cemb, sensembs[i]);
 			}
+			//System.err.println("multisense embs:");
+			//System.err.println(Arrays.deepToString(sensembs));
+
 			// weighted average
 			double[] weights = softMax(acts);
 			double[] semb = new double[sensembs[0].length];
@@ -163,6 +167,7 @@ public class Senna {
 					semb[i] += sensembs[j][i] * weights[j];
 				}
 			}
+
 			return Optional.of(semb);
 		}
 		return Optional.absent();

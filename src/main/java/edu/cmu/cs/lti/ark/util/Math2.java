@@ -30,7 +30,7 @@ public class Math2 {
 		}
 		double [] ps = new double[a.length];
 		for (int i : xrange(a.length)) {
-			ps[i] = a[i] / z;
+			ps[i] = Math.exp(a[i]) / z;
 		}
 		return ps;
 	}
